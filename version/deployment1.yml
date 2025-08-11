@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: istio-container
-        image: istio_image1:v1
+        image: istio-image1:v1
         resources:
           requests:
             memory: "128Mi"
