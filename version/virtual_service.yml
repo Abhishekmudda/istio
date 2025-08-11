@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: istio-virtualservice
+  namespace: default
+spec:
+  hosts:
+    - "*" # Match all hosts
+  gateways:
+    - istio-gateway
+  http:
+    - route:
+        - destination:
+            host: istio-service
+            subset: v1
+          weight: 40
+        - destination:
+            host: istio-service
+            subset: v2
+          weight: 35
+        - destination:
+            host: istio-service
+            subset: v3
+          weight: 25

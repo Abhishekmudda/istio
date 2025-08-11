@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: istio-deployment-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: app
+        version: v2
+    spec:
+      containers:
+      - name: istio-container
+        image: istio_image:v2
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
