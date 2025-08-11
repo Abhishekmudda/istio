@@ -1,12 +1,12 @@
 #!/bin/bash
 cp app1.py app.py
-docker build -t istio-image1 .
+docker build -t istio-image1:v1 .
 
 cp app2.py app.py
-docker build -t istio-image2 .
+docker build -t istio-image2:v2 .
 
 cp app3.py app.py
-docker build -t istio-image3 .
+docker build -t istio-image3:v3 .
 
 docker images
 
