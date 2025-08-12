@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: prometheus-istio-virtualservice
+  namespace: istio-system
+spec:
+  hosts:
+    - "*" 
+  gateways:
+    - prometheus-ingress-gateway
+  http:
+    - match:
+        - port: 31400
+      route:
+        - destination:
+            host: prometheus.istio-system.svc.cluster.local
+            port:
+              number: 9090
