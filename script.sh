@@ -19,6 +19,6 @@ kubectl apply -f destinationrule.yml
 cd ..
 
 
-kubectl get virtualservice
-kubectl get gateway
-kubectl get destinationrule
+kubectl get virtualservice -n istio-system
+kubectl get gateway -n istio-system
+kubectl get destinationrule -n istio-system
