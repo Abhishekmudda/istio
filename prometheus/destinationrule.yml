@@ -4,7 +4,7 @@ metadata:
   name: prometheus-istio-destinationrule
   namespace: istio-system
 spec:
-  host: prometheus
+  host: prometheus.istio-system.svc.cluster.local
   trafficPolicy:
     tls:
       mode: DISABLE

@@ -4,7 +4,7 @@ metadata:
   name: kiali-istio-destinationrule
   namespace: istio-system
 spec:
-  host: kiali
+  host: kiali.istio-system.svc.cluster.local
   trafficPolicy:
     tls:
       mode: DISABLE

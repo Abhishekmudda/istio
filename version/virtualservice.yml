@@ -11,7 +11,7 @@ spec:
   http:
     - route:
         - destination:
-            host: istio-service
+            host: istio-service 
             subset: v1
           weight: 40
         - destination:

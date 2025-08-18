@@ -1,0 +1,11 @@
+virtual service finds destination based on the host present in both. 
+Virtual service matches the host that is present under destination and host in destination rule.
+If you give a short name like grafana, Istio assumes: grafana.<same-namespace>.svc.cluster.local
+Flow
+gateway -> virtual service -> destination rules -> service
+
+Meaning of tls.mode
+#DISABLE → No TLS, traffic is plaintext.
+#SIMPLE → TLS is used, but no client certs (like HTTPS without mutual auth).
+#MUTUAL → mTLS with manually provided certs (you specify clientCertificate, privateKey, caCertificates).
+#ISTIO_MUTUAL → mTLS using Istio-managed certs (auto-generated, rotated by Istio CA).
